@@ -1,16 +1,15 @@
 import { mount } from 'auth/AuthApp';
-import React, { useRef, useEffect, useImperativeHandle } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
-export default ( { onSignIn } ) => {
+export default ({ onSignIn }) => {
   const ref = useRef(null);
   const history = useHistory();
 
   useEffect(() => {
     const { onParentNavigate } = mount(ref.current, {
       initialPath: history.location.pathname,
-      onNavigate: ( { pathname: nextPathname } ) => {
-        //console.log(nextPathname);
+      onNavigate: ({ pathname: nextPathname }) => {
         const { pathname } = history.location;
 
         if (pathname !== nextPathname) {
