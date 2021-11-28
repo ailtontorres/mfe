@@ -1,4 +1,4 @@
-name: deploy-dashboard
+name: deploy-dashboard-v2
 
 on:
   push:
